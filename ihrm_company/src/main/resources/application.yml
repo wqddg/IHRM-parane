@@ -1,0 +1,26 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: ihrm-company
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/wqddg_ihrm?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC
+    username: wqddg
+    password: 1314520
+    hikari:
+      max-lifetime: 500000
+  jpa:
+    database: mysql
+    show-sql: true
+    open-in-view: true
+  redis:
+    host: 127.0.0.1
+    port: 6378
+    password: 1314520
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka/
+  instance:
+    prefer-ip-address: true

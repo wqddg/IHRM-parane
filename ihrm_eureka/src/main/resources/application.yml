@@ -1,0 +1,17 @@
+server:
+  port: 6868
+spring:
+  application:
+    name: ihrm-eureka
+#配置eureka server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #设置服务注册与发现中心是否注册到其他eureka(如果为集群搭建、多个eureka需要互相访问)中
+    register-with-eureka: false
+    #设置服务注册与发现中心是否作为服务进行注册 是否为集群搭建
+    fetch-registry: false
+    #配置暴露给Eureka Client的请求地址
+    service-url:
+      efaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

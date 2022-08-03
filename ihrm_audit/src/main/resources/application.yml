@@ -1,0 +1,36 @@
+server:
+  port: 9008
+
+spring:
+  application:
+    name: ihrm-audit
+  datasource:
+    ihrm:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/wqddg_ihrm?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&nullCatalogMeansCurrent=true
+      username: wqddg
+      password: 1314520
+    act:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/act?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&nullCatalogMeansCurrent=true
+      username: wqddg
+      password: 1314520
+  jpa:
+    database: mysql
+    show-sql: true
+    open-in-view: true
+  activiti:
+    database-schema-update: true
+    history-level: full
+    db-history-used: true
+    check-process-definitions: false
+  redis:
+    host: 127.0.0.1
+    port: 6378
+    password: 1314520
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka/
+  instance:
+    prefer-ip-address: true
